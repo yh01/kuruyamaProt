@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+
+
+.form{
+	width:400px;
+	margin:0 auto;
+}
+
+span {
+font-size: 15px;
+color:red;
+}
+
+
+ td {
+	height:30px;
+}

@@ -1,0 +1,15 @@
+﻿@CHARSET "UTF-8";
+
+/* 確認画面のdevの幅*/
+div.High.title. {
+	height: 200px;
+	padding:5px
+}
+/* タイトルの文字の大きさ*/
+.title {
+	font-size: 20px;
+}
+/* 文言の大きさ*/
+.Wording{
+	font-size: 15px;
+}

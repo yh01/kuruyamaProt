@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.backimg {
+height:420px;
+background-color:#ffffff;
+width: 800px;
+margin:auto;
+opacity:0.8;
+}
+
+.textFeilds{
+	margin-top:50px;
+	text-align:right;
+}
+
+#form{
+	margin:auto;
+	text-align:center;
+}
+
+input[type="text"],
+[type="password"] {
+  width:260px;
+  padding: 4px;
+  font-size: 14px;.
+  }
+
+.buttons{
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+span{
+	color:red;
+}
+
+td{
+	font-size:15px;
+
+	float:left;
+}
+
+.form{
+	width:300px;
+	margin:auto;
+}

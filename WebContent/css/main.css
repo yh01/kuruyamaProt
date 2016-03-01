@@ -1,0 +1,37 @@
+.select_menu{
+width:300px;
+margin:auto;
+}
+
+.item_table{
+		width:300px;
+		margin:auto;
+		float: left;
+}
+.item_table td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+.storeTable{
+	float:left;
+}
+#bgmain{
+	background-color:#fff;
+	width:1000px;
+	margin:auto;
+	opacity:0.8;
+}
+
+input[type="button"] {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 8px 30px;
+    background-color: #248;
+    color: #fff;
+    border-style: none;
+}
+
+ul.bxslider{
+		text-align: center;
+    width:100%;
+}

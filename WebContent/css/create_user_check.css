@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.create_check_table{
+
+		width: 50%;
+}
+.create_check_table td {
+	border: solid 1px;
+	padding: 1em;
+
+}
+.title{padding-top:50px;
+}
+.kakunin{
+	text-align:center;
+	margin-bottom:50px;
+}
+.create_check_table th {
+	border: solid 1px;
+
+
+}
+
+.title
+{padding:50px;
+}
+
+.kakunin
+{padding:50px;}

@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.box{
+	padding: 20px;
+	text-align:center;
+}
+.top{
+	margin-top:50px;
+}

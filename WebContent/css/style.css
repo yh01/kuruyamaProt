@@ -1,0 +1,126 @@
+@CHARSET "UTF-8";
+/* �ｿｽ�ｿｽ�ｿｽﾊ全�ｿｽy�ｿｽ[�ｿｽW�ｿｽﾌコ�ｿｽ�ｿｽ�ｿｽe�ｿｽi�ｿｽﾌサ�ｿｽC�ｿｽY�ｿｽi�ｿｽs�ｿｽN�ｿｽZ�ｿｽ�ｿｽ�ｿｽw�ｿｽ�ｿｽ�ｿｽj*/
+#container {
+  width: 1000px;
+  margin: 200px;
+  padding: 0;
+}
+
+body{
+	background-image: url("../img/bg.jpg");
+}
+
+}
+
+/* <p>�ｿｽ^�ｿｽO�ｿｽﾅ記�ｿｽq�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽt�ｿｽH�ｿｽ�ｿｽ�ｿｽg�ｿｽﾌ大き�ｿｽ�ｿｽ�ｿｽﾆ色*/
+
+p {
+font-family: "�ｿｽl�ｿｽr �ｿｽo�ｿｽS�ｿｽV�ｿｽb�ｿｽN",sans-serif;
+font-size:15px
+}
+
+
+
+/* <h1>�ｿｽ^�ｿｽO�ｿｽﾅ記�ｿｽq�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽt�ｿｽH�ｿｽ�ｿｽ�ｿｽg�ｿｽﾌ大き�ｿｽ�ｿｽ�ｿｽﾆ色*/
+h1 {
+color:#000;
+text-align:center;
+}
+
+
+
+/* �ｿｽﾘ目包ｿｽ�ｿｽ�ｿｽ�ｿｽﾌ背�ｿｽi�ｿｽF*/
+#backimg {
+background-color:#ffffff;
+opacity:0.8;
+width:1000px;
+margin:auto;
+}
+
+button.btn {
+
+    /* �ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽT�ｿｽC�ｿｽY�ｿｽ�ｿｽ1.4em�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    font-size: 1.4em;
+
+
+
+    /* �ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽﾌ托ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽbold�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    font-weight: bold;
+
+
+
+    /* �ｿｽc�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ10px�ｿｽA
+
+     * �ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ30px�ｿｽﾌ余�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽw�ｿｽ�ｿｽ */
+
+    padding: 10px 30px;
+
+
+
+    /* �ｿｽw�ｿｽi�ｿｽF�ｿｽ�ｿｽ�ｿｽZ�ｿｽ�ｿｽ�ｿｽﾂ色�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    background-color: #990000;
+
+
+
+    /* �ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽF�ｿｽ�白色�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    color: #fff;
+
+
+
+    /* �ｿｽ{�ｿｽ[�ｿｽ_�ｿｽ[�ｿｽ�ｿｽ�ｿｽﾈゑｿｽ�ｿｽ�ｿｽ */
+
+    border-style: none;
+
+
+
+    /* �ｿｽ{�ｿｽ^�ｿｽ�ｿｽ�ｿｽﾌ影�ｿｽﾌ指�ｿｽ�ｿｽ
+
+     * �ｿｽe�ｿｽﾌ会ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ2px
+
+     * �ｿｽc�ｿｽ�ｿｽ�ｿｽ�ｿｽ2px
+
+     * �ｿｽﾚゑｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ3px
+
+     * �ｿｽL�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ1px
+
+     * �ｿｽF�ｿｽ�ｿｽ#666�ｿｽi�ｿｽO�ｿｽ�ｿｽ�ｿｽ[�ｿｽj�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    box-shadow: 2px 2px 3px 1px #666;
+
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+
+}
+
+
+
+button.btn:hover {
+
+    /* �ｿｽw�ｿｽi�ｿｽF�ｿｽ�明るい�ｿｽﾂ色�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    background-color: red;
+
+
+
+    /* �ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽF�ｿｽ�白色�ｿｽﾉ指�ｿｽ�ｿｽ */
+
+    color: white;
+
+}
+.header{
+	margin:auto;
+	width: 1000px;
+    	height: 150px;
+    	background: url('../img/header.jpg');
+}
+.footer{
+	margin:auto;
+	width: 1000px;
+    	height: 150px;
+    	background: url('../img/footer.jpg');
+}

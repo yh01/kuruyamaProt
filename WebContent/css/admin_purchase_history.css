@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+#site-box { padding:50px;   }
+
+
+#a-box {  float: left;}
+
+#b-box {
+  float: right;
+  margin-bottom: 100px;
+}
+
+#c-box {
+  clear:both;
+   text-align: center;
+	padding:50px;
+  }
+#c-box h3{
+	text-align:left;
+}
+table {
+	border-collapse: collapse;
+  margin-top: 70px;
+  width: 100%;
+}
+td,th {
+  white-space: nowrap;
+	border: solid 1px;
+	padding: 0.5em;
+}
+
+
+td{
+  text-align: right;
+}
+
+th{
+  text-align: center;
+}
+
+.List1{
+    letter-spacing: 0.5em;
+  text-align:center;
+
+}
+list style{
+none ;
+}

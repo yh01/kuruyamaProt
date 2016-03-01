@@ -1,0 +1,18 @@
+
+#mypage_btn{
+	width:600px;
+	margin-left:250px;
+	padding:10px;
+}
+
+.mypage_table td,th{
+	width: auto;
+	margin: center;
+	hite-space: nowrap;
+	padding: 0.5em;
+}
+
+.mypage_table td {
+	border: solid 1px;
+	padding: 0.5em;
+}

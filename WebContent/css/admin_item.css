@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+#site-box {
+
+padding: 50px;
+	}
+
+
+#a-box {
+	float: left;}
+
+#b-box {
+  float: right;
+  margin-bottom: 100px;
+}
+
+#c-box {
+  clear:both;
+  }
+
+table {
+	border-collapse: collapse;
+  margin-top: 70px;
+  width: 100%;
+}
+td,th {
+  white-space: nowrap;
+	border: solid 1px;
+	padding: 0.5em;
+}
+
+td{
+  text-align: right;
+}
+
+th{
+  text-align: center;
+}
+
+.List{
+	letter-spacing: 0.5em;
+  text-align:center;
+}
+.List1{
+	letter-spacing: 0.5em;
+  text-align:center;
+}
+table.{
+	border-collapse: none;
+  margin-top: 0px;
+  width: 100%;
+  border-style: none;
+}
+li{
+	list-style:none;
+
+}

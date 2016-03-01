@@ -1,0 +1,73 @@
+﻿@CHARSET "UTF-8";
+/*周りの余白*/
+#site-box{
+    padding:50px;
+}
+
+/*liタグの点けし*/
+li{
+    list-style:none;
+
+}
+
+/*中央よせ*/
+.Center{
+    margin-left:center;
+    text-align:center;
+}
+
+/*divの設定*/
+#bgtest{
+    background-color:#ffffff;
+}
+
+/*テーブルの枠設定*/
+table, th, td {
+    border:none;
+    width:: auto ;;
+    padding:10px;
+    border-collapse: collapse;
+    border: 1px #000000 solid;
+}
+
+
+    /*
+        margin-left:auto;
+        margin-right:auto;
+    */
+/*テーブルを文を右に*/
+.situmonn{
+
+    text-align: right;
+}
+
+/*th 枠の幅*/
+.neutral{
+    height:50px;
+    width:150px;
+    text-align: center;
+}
+.long{
+    width:600px;
+    text-align: center;
+}
+
+/* tr の幅*/
+#Column_Tr{
+    height:100px;
+    word-break:break-all;
+}
+
+/* tdを左寄せ*/
+#d_left{
+
+    text-align: left;
+    word-break:break-all;
+}
+
+
+
+
+
+
+

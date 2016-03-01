@@ -1,0 +1,92 @@
+﻿@CHARSET "UTF-8";
+
+.Hintergrund {
+height:560px;
+background-color:#e2e2dd;
+width:1000px;
+margin:auto;
+}
+
+.box2 {
+	float:left;
+	width:50%;
+    text-align: center;
+}
+
+.box3{
+	float:right;
+	width:50%;
+}
+
+.textFeilds{
+	margin-top:50px;
+}
+
+h4{
+	color:#990000;
+}
+
+input[type="text"],
+[type="password"] {
+  width:160px;
+  padding: 4px;
+  font-size: 14px;
+  }
+
+.sns{
+	height:50px;
+	margin-top:30px;
+}
+
+.google, .twitter{
+	margin-left:15px;
+}
+
+.buttons{
+	margin-top:30px;
+}
+.loginBtn {
+	margin-left:15px;
+}
+
+.loginBtn , .newBtn{
+    /* 文字サイズを1.4emに指定 */
+    font-size: 1.4em;
+
+    /* 文字の太さをboldに指定 */
+    font-weight: bold;
+
+    /* 縦方向に10px、
+     * 横方向に30pxの余白を指定 */
+    padding: 10px 30px;
+
+    /* 文字色を白色に指定 */
+    color: #fff;
+
+    /* ボーダーをなくす */
+    border-style: none;
+
+    /* ボタンの影の指定
+     * 影の横幅を2px
+     * 縦長を2px
+     * ぼかしを3px
+     * 広がりを1px
+     * 色を#666（グレー）に指定 */
+    box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+
+    /* テキストの影の指定
+     * 影の横幅を1px
+     * 縦長を1px
+     * ぼかしを2px
+     * 色を#000（黒）に指定 */
+    text-shadow: 1px 1px 2px #000;
+
+    /* 色の指定 */
+    background:#990000;
+
+ 
+}
+
+

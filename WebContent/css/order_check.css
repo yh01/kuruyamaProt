@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+#backimg{
+	text-align:center;
+}
+
+table{
+     text-align: center
+    border:"2";
+	margin-top: 30px;
+	margin-bottom: 30px;
+    width: 500px;
+    border-collapse: collapse;
+    margin-right : auto;
+    margin-left : auto;
+	cellspacing:5;
+	cellpadding:5px;
+}
+
+th, td{
+	border: 2px #2b2b2b solid;
+	font-size:15px;
+	padding:10px;
+	padding-left:12px;
+	padding-right:12px;
+}
+
+
+table td{
+	text-align:center;
+}
+
+h2{
+margin-left:370px;}
+
