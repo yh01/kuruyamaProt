@@ -24,8 +24,10 @@ public class AdminGoPurchaseHistoryDAO {
 				dto.setSalesId(rSet.getInt("sales_id"));
 				dto.setUserId(rSet.getInt("user_id"));
 				dto.setItemName(rSet.getString("item_name"));
-				dto.setNumberoOfItem(rSet.getInt("number_of_items"));
+				dto.setNumberOfItem(rSet.getInt("number_of_items"));
 				dto.setDateTime(rSet.getString("purchase_date"));
+				dto.setPostalCode(rSet.getString("postal_code"));
+				dto.setAddress(rSet.getString("addless"));
 				historyList.add(dto);
 				res = true;
 			}

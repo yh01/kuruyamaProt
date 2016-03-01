@@ -17,7 +17,8 @@
 		<h2>管理者画面</h2>
 		<input type="button" value="商品編集" onclick=>
 		<input type="button" value="ユーザー編集" onclick=>
-		<input type="button" value="購入履歴" onclick=> <input type="button" value="問い合わせ" onclick=>
+		<s:form action="AdminGoPurchaseHistoryAction"><button type="submit">購入履歴</button></s:form>
+	    <input type="button" value="問い合わせ" onclick=>
 		<input type="button" value="ログアウト" onclick="user_logout.jsp">
 	</div>
 
@@ -56,28 +57,17 @@
 					<th>郵便番号</th>
 					<th>住所</th>
 				</tr>
-
+				<s:iterator value="historyList">
 					<tr>
-
-						<td>1</td>
-						<td>nakagawabutyou</td>
-						<td>ラーメン</td>
-						<td>55</td>
-						<td>2016/02/24</td>
-						<td>222-2222</td>
-						<td>カリフォルニア州</td>
+						<td><s:property value="salesId" /></td>
+						<td><s:property value="userId" /></td>
+						<td><s:property value="itemName" /></td>
+						<td><s:property value="NumberOfItem" /></td>
+						<td><s:property value="dateTime" /></td>
+						<td><s:property value="postalCode" /></td>
+						<td><s:property value="Address" /></td>
 					</tr>
-
-					<tr>
-
-						<td>2</td>
-						<td>nakagawa</td>
-						<td>塩ラーメン</td>
-						<td>10</td>
-						<td>2016/02/24
-						<td>555-5555</td>
-						<td>東京都千代田区○○○</td>
-					</tr>
+				</s:iterator>
 			</table>
 
 			<br>

@@ -42,6 +42,8 @@ postal_code varchar(8),
 
 addless varchar(100)
 );
+insert into history value
+(1,1,"ラーメン",2,"2016-01-28 22:00:00","222-2222","カリフォルニア");
 
 
 drop table if exists cart;

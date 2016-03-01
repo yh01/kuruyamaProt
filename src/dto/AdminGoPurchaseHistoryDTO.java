@@ -4,8 +4,10 @@ public class AdminGoPurchaseHistoryDTO {
 	private int salesId;
 	private int userId;
 	private String itemName;
-	private int NumberoOfItem;
+	private int NumberOfItem;
 	private String dateTime;
+	private String postalCode;
+	private String Address;
 
 	public int getUserId() {
 		return userId;
@@ -19,11 +21,11 @@ public class AdminGoPurchaseHistoryDTO {
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public int getNumberoOfItem() {
-		return NumberoOfItem;
+	public int getNumberOfItem() {
+		return NumberOfItem;
 	}
-	public void setNumberoOfItem(int numberoOfItem) {
-		NumberoOfItem = numberoOfItem;
+	public void setNumberOfItem(int numberOfItem) {
+		NumberOfItem = numberOfItem;
 	}
 	public String getDateTime() {
 		return dateTime;
@@ -36,5 +38,17 @@ public class AdminGoPurchaseHistoryDTO {
 	}
 	public void setSalesId(int salesId) {
 		this.salesId = salesId;
+	}
+	public String getPostalCode() {
+		return postalCode;
+	}
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
 	}
 }
