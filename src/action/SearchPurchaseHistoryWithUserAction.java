@@ -4,17 +4,19 @@ import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.AdminGoPurchaseHistoryDAO;
+import dao.SearchPurchaseHistoryWithUserDAO;
 import dto.AdminPurchaseHistoryDTO;
 
-public class AdminGoPurchaseHistoryAction extends ActionSupport{
+public class SearchPurchaseHistoryWithUserAction extends ActionSupport{
+	private int userId;
+
 	private ArrayList<AdminPurchaseHistoryDTO> historyList = new ArrayList<AdminPurchaseHistoryDTO>();
 	public String execute(){
-		String res=ERROR;
-		AdminGoPurchaseHistoryDAO dao = new AdminGoPurchaseHistoryDAO();
-		if(dao.selectAllHistoryData()){
+		String res="error";
+		SearchPurchaseHistoryWithUserDAO dao = new SearchPurchaseHistoryWithUserDAO();
+		if(dao.selectUserId(userId)){
 			historyList = dao.getHistoryList();
-			res = SUCCESS;
+			res = "success";
 		}
 		return res;
 	}
@@ -23,5 +25,11 @@ public class AdminGoPurchaseHistoryAction extends ActionSupport{
 	}
 	public void setHistoryList(ArrayList<AdminPurchaseHistoryDTO> historyList) {
 		this.historyList = historyList;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }

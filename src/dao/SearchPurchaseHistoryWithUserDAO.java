@@ -10,12 +10,12 @@ import com.mysql.jdbc.Connection;
 import dto.AdminPurchaseHistoryDTO;
 import util.MySQLConnector;
 
-public class AdminGoPurchaseHistoryDAO {
+public class SearchPurchaseHistoryWithUserDAO {
 	private ArrayList<AdminPurchaseHistoryDTO> historyList = new ArrayList<AdminPurchaseHistoryDTO>();
-	public boolean selectAllHistoryData(){
+	public boolean selectUserId(int userId){
 		boolean res = true;
 		Connection con=MySQLConnector.getConnection("ramen");
-		String sql = "SELECT * FROM history";
+		String sql = "SELECT * FROM history WHERE user_id = '"+userId+"'";
 		try{
 			PreparedStatement ps=con.prepareStatement(sql);
 			ResultSet rSet = ps.executeQuery();

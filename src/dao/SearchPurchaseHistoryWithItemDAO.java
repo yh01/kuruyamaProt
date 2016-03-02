@@ -10,12 +10,12 @@ import com.mysql.jdbc.Connection;
 import dto.AdminPurchaseHistoryDTO;
 import util.MySQLConnector;
 
-public class AdminGoPurchaseHistoryDAO {
+public class SearchPurchaseHistoryWithItemDAO {
 	private ArrayList<AdminPurchaseHistoryDTO> historyList = new ArrayList<AdminPurchaseHistoryDTO>();
-	public boolean selectAllHistoryData(){
+	public boolean selectItemName(String itemName){
 		boolean res = true;
 		Connection con=MySQLConnector.getConnection("ramen");
-		String sql = "SELECT * FROM history";
+		String sql = "SELECT * FROM history WHERE item_name = '"+itemName+"'";
 		try{
 			PreparedStatement ps=con.prepareStatement(sql);
 			ResultSet rSet = ps.executeQuery();
@@ -42,11 +42,9 @@ public class AdminGoPurchaseHistoryDAO {
 		}
 		return res;
 	}
-
 	public ArrayList<AdminPurchaseHistoryDTO> getHistoryList() {
 		return historyList;
 	}
-
 	public void setHistoryList(ArrayList<AdminPurchaseHistoryDTO> historyList) {
 		this.historyList = historyList;
 	}

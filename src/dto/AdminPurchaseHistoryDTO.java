@@ -1,6 +1,6 @@
 package dto;
 
-public class AdminGoPurchaseHistoryDTO {
+public class AdminPurchaseHistoryDTO {
 	private int salesId;
 	private int userId;
 	private String itemName;
@@ -8,7 +8,12 @@ public class AdminGoPurchaseHistoryDTO {
 	private String dateTime;
 	private String postalCode;
 	private String Address;
-
+	public int getSalesId() {
+		return salesId;
+	}
+	public void setSalesId(int salesId) {
+		this.salesId = salesId;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -32,12 +37,6 @@ public class AdminGoPurchaseHistoryDTO {
 	}
 	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
-	}
-	public int getSalesId() {
-		return salesId;
-	}
-	public void setSalesId(int salesId) {
-		this.salesId = salesId;
 	}
 	public String getPostalCode() {
 		return postalCode;
