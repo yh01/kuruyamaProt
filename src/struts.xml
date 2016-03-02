@@ -16,5 +16,11 @@
 			<result name="success">admin_purchase_history.jsp</result>
 			<result name="error">/admin_purchase_history.jsp</result>
 	</action>
+
+	<action name="SearchPurchaseHistoryWithDateAction" class="action.SearchPurchaseHistoryWithDateAction" method="execute">
+			<result name="success">admin_purchase_history.jsp</result>
+			<result name="error">/admin_purchase_history.jsp</result>
+			<result name="loginError">/admin_login.jsp</result>
+	</action>
 </package>
 </struts>

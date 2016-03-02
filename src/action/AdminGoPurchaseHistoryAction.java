@@ -16,6 +16,11 @@ public class AdminGoPurchaseHistoryAction extends ActionSupport{
 			historyList = dao.getHistoryList();
 			res = SUCCESS;
 		}
+		/*
+		if(!session.containsKey("adminId")){
+			res = "loginError";
+		}
+		*/
 		return res;
 	}
 	public ArrayList<AdminPurchaseHistoryDTO> getHistoryList() {

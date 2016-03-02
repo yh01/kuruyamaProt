@@ -30,27 +30,25 @@
 
 
 		<ul style="list-style: none">
-		</ul>
-		<br>
-		<s:form action="SearchPurchaseHistoryWithUserAction">
-		<ul style="list-style: none">
+
+			<s:form action="SearchPurchaseHistoryWithUserAction">
 			<li style="float: right"><button type="submit">検索</button></li>
 			<li style="float: right"><s:textfield name="userId" placeholder="ユーザーIDを入力してください"/></li>
-		</ul>
-		</s:form>
-		<br>
+			</s:form>
 
-		<s:form action="SearchPurchaseHistoryWithItemAction">
-		<ul style="list-style: none">
+			<s:form action="SearchPurchaseHistoryWithItemAction">
 			<li style="float: right"><button type="submit">検索</button></li>
 			<li style="float: right"><s:textfield name="itemName" placeholder="商品名を入力してください"/></li>
+			</s:form>
+
+			<s:form action="SearchPurchaseHistoryWithDateAction">
+			<li style="float: right"><button type="submit">検索</button></li>
+			<li style="float: right"><s:textfield name="purchaseDate" placeholder="注文日を入力してください。例 20160224" size="35"/></li>
+			</s:form>
+
 		</ul>
-		</s:form>
-		<br>
-		<ul style="list-style: none">
-			<li style="float: right"><input type="button" value="検索" onclick="history.back()"></li>
-			<li style="float: right"><input type="text" name="cardonum" size="22" placeholder="注文日を入力// 2016/02/24"></li>
-		</ul>
+
+
 
 			<table>
 				<tr>
