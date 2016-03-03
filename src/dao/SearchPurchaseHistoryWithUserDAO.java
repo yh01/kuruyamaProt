@@ -10,8 +10,24 @@ import com.mysql.jdbc.Connection;
 import dto.AdminPurchaseHistoryDTO;
 import util.MySQLConnector;
 
+/**
+ * 検索したユーザーIDをもとに、関連する購入履歴を取得するクラス
+ * @author Yuki Hoshino
+ * @since 1.0
+ * @version 1.0
+ */
 public class SearchPurchaseHistoryWithUserDAO {
+
+	/**
+	 * 購入履歴一覧を格納するリスト
+	 */
 	private ArrayList<AdminPurchaseHistoryDTO> historyList = new ArrayList<AdminPurchaseHistoryDTO>();
+
+	/**
+	 * データベースに接続し、検索したユーザーIDをもとにramenデータベースのhistoryテーブルから関連する購入履歴一覧を取得するメソッド
+	 * @param userId 検索したユーザーID
+	 * @return res 取得できたらtrue、できなかったらfalseを返します。
+	 */
 	public boolean selectUserId(int userId){
 		boolean res = true;
 		Connection con=MySQLConnector.getConnection("ramen");
@@ -43,10 +59,18 @@ public class SearchPurchaseHistoryWithUserDAO {
 		return res;
 	}
 
+	/**
+	 * 購入履歴一覧を取得するメソッド
+	 * @return 購入履歴一覧のリスト
+	 */
 	public ArrayList<AdminPurchaseHistoryDTO> getHistoryList() {
 		return historyList;
 	}
 
+	/**
+	 * 購入履歴を格納するメソッド 購入履歴一覧のリスト
+	 * @param historyList
+	 */
 	public void setHistoryList(ArrayList<AdminPurchaseHistoryDTO> historyList) {
 		this.historyList = historyList;
 	}
