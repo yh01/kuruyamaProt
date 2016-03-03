@@ -40,7 +40,7 @@ public class AdminGoPurchaseHistoryAction extends ActionSupport implements Sessi
 	 * @return res 未ログインの場合resにloginErrorを格納、データを取得できたらリストに格納し、resにSUCCESSを格納、取得できなかったらresにERRORを格納、resを返します。
 	 */
 	public String execute(){
-		String res = ERROR;
+		String res = "error";
 		AdminGoPurchaseHistoryDAO dao = new AdminGoPurchaseHistoryDAO();
 
 		if(!session.containsKey("adminId")){
@@ -49,7 +49,7 @@ public class AdminGoPurchaseHistoryAction extends ActionSupport implements Sessi
 
 		if(dao.selectAllHistoryData()){
 			historyList = dao.getHistoryList();
-			res = SUCCESS;
+			res = "success";
 		}
 		return res;
 	}
