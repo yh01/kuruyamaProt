@@ -4,15 +4,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ユーザー編集</title>
 	 <link rel="stylesheet" type="text/css" href="./css/admin_custmor.css">
      <link rel="stylesheet" href="././css/animate.css">
      <link rel="stylesheet" href="././css/style.css">
-     <script type="text/javascript" src="././js/jquery-2.1.4.js"></script>
+     <script type="text/javascript" src="./.js/jquery-2.1.4.js"></script>
 	 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	 <script type="text/javascript" src="././js/graphLine.js"></script>
-</head>
+	 <script type="text/javascript" src="./.js/graphLine.js"></script>
+ </head>
 	<body>
 	<div id="site-box">
 	<div id="backimg">
@@ -61,9 +61,10 @@
            </tbody>
         </table>
         <div id="List1">← 1 2 3 4 →</div>
-		<div id = "graphLine"></div>
+
       </div>
     </div>
     </div>
+    <div id = "graphLine"></div>
 </body>
 </html>
