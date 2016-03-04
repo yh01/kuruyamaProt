@@ -14,6 +14,7 @@
 	 <script type="text/javascript" src="./.js/graphLine.js"></script>
  </head>
 	<body>
+	<div id = "graphLine"></div>
 	<div id="site-box">
 	<div id="backimg">
 	<div id="title">
@@ -65,6 +66,6 @@
       </div>
     </div>
     </div>
-    <div id = "graphLine"></div>
+
 </body>
 </html>
