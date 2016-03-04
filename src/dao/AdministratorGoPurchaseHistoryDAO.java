@@ -17,7 +17,7 @@ import util.MySQLConnector;
  * @version 1.0
  *
  */
-public class AdminGoPurchaseHistoryDAO {
+public class AdministratorGoPurchaseHistoryDAO {
 	/**
 	 *  購入履歴一覧を格納するリスト
 	 */

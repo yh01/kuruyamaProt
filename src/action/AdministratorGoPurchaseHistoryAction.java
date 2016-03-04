@@ -7,7 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.AdminGoPurchaseHistoryDAO;
+import dao.AdministratorGoPurchaseHistoryDAO;
 import dto.AdminPurchaseHistoryDTO;
 
 /**
@@ -21,7 +21,7 @@ import dto.AdminPurchaseHistoryDTO;
  * @since 1.0
  * @version 1.0
  */
-public class AdminGoPurchaseHistoryAction extends ActionSupport implements SessionAware{
+public class AdministratorGoPurchaseHistoryAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 購入履歴一覧を格納するリスト
@@ -41,15 +41,15 @@ public class AdminGoPurchaseHistoryAction extends ActionSupport implements Sessi
 	 */
 	public String execute(){
 		String res = "error";
-		AdminGoPurchaseHistoryDAO dao = new AdminGoPurchaseHistoryDAO();
-
-		if(!session.containsKey("adminId")){
-			res = "loginError";
-		}
+		AdministratorGoPurchaseHistoryDAO dao = new AdministratorGoPurchaseHistoryDAO();
 
 		if(dao.selectAllHistoryData()){
 			historyList = dao.getHistoryList();
 			res = "success";
+		}
+
+		if(!session.containsKey("adminId")){
+			res = "loginError";
 		}
 		return res;
 	}

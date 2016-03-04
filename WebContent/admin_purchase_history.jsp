@@ -30,11 +30,21 @@ $(function(){
 	<div id="site-box">
 		<div id="a-box">
 			<h2>管理者画面</h2>
-			<input type="button" value="商品編集" onclick=>
-			<input type="button" value="ユーザー編集" onclick=>
-			<s:form action="AdminGoPurchaseHistoryAction"><button type="submit">購入履歴</button></s:form>
-		    <input type="button" value="問い合わせ" onclick=>
-			<input type="button" value="ログアウト" onclick="user_logout.jsp">
+						<s:form action="AdministratorGoEditItemProductAction" style="display: inline">
+						<s:submit type="button" value="商品編集" />
+						</s:form>
+						<s:form action="AdministratorGoEditUserAction" style="display: inline">
+						<s:submit type="button" value="ユーザー編集" />
+						</s:form>
+						<s:form action="AdministratorGoPurchaseHistoryAction" style="display: inline">
+							<s:submit type="button" value="購入履歴" />
+						</s:form>
+						<s:form action="AdministratorGoInquiryAction" style="display: inline">
+							<s:submit type="button" value="問い合わせ" />
+						</s:form>
+						<s:form action="AdministratorLogoutAction" style="display: inline">
+							<s:submit type="button" value="ログアウト" />
+						</s:form>
 		</div>
 		<div id="c-box">
 			<h3>購入履歴</h3>
