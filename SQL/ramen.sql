@@ -23,7 +23,11 @@ item_stock int not null,
 
 img_path varchar(100) not null
 );
-
+insert into ramen_items value
+(1,"しょうゆラーメン","しょうゆラーメンです","ramen",500,100,"aaa"),
+(2,"しょうゆラーメン","しょうゆラーメンです","ramen",500,200,"aaa"),
+(3,"しょうゆラーメンしょうゆラーメン","しょうゆラーメンです","ramen",500,200,"aaa"),
+(4,"しょうゆラーメンしょうゆラーメンしょうゆラーメン","しょうゆラーメンです","ramen",500,500,"aaa");
 
 drop table if exists history;
 create table history(

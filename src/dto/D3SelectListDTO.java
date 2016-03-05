@@ -2,17 +2,18 @@ package dto;
 
 public class D3SelectListDTO {
 	private String itemName;
-	private int salesAmount;
+	private int itemStock;
 	public String getItemName() {
 		return itemName;
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public int getSalesAmount() {
-		return salesAmount;
+
+	public int getItemStock() {
+		return itemStock;
 	}
-	public void setSalesAmount(int salesAmount) {
-		this.salesAmount = salesAmount;
+	public void setItemStock(int itemStock) {
+		this.itemStock = itemStock;
 	}
 }

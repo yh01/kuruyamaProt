@@ -21,17 +21,17 @@ public class D3SelectListDAO {
 	public boolean select(){
 		boolean result = true;
 		D3DBConnector dbConnection = new D3DBConnector();
-		Connection con = dbConnection.getConnection("d3SelectListTest");
+		Connection con = dbConnection.getConnection("ramen");
 
 		try{
-			String sql = "SELECT itemName,salesAmount from d3select ORDER BY id";
+			String sql = "SELECT item_name,item_stock from ramen_items ORDER BY item_id";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rSet = ps.executeQuery();
 
 			while(rSet.next()){
 				D3SelectListDTO dto = new D3SelectListDTO();
 				dto.setItemName(rSet.getString(1));
-				dto.setSalesAmount(rSet.getInt(2));
+				dto.setItemStock(rSet.getInt(2));
 				D3GraphList.add(dto);
 			}
 		}catch(SQLException e){
