@@ -44,7 +44,7 @@ jQuery(function($) {
 					            .append('svg')
 						        .attr({
 						    	       height: svgH + margin.top + margin.bottom,
-						               width:  svgW + 10
+						               width:  size + svgW /2
 		                     });
 
 		            //棒グラフの生成
@@ -60,8 +60,6 @@ jQuery(function($) {
 									width:0,
 									height :30,
 									fill: function(d, i){
-										return color(d.val)
-										/*
 										var res;
 								        if(d.val <= 10){
 								        	res = "red";
@@ -69,7 +67,6 @@ jQuery(function($) {
 								        	res = color(d.val);
 								        }
 								        return res;
-								        */
 								    }
 					         })
 					         .on("click", function(d) {
@@ -80,8 +77,6 @@ jQuery(function($) {
 							 })
 							 .on("mouseout", function(d) {
 								d3.select(this).attr("fill", function(d, i){
-									return color(d.val)
-									/*
 									var res;
 									if(d.val <= 10){
 							        	res = "red";
@@ -89,7 +84,6 @@ jQuery(function($) {
 							        	res = color(d.val);
 							        }
 									return res;
-									*/
 							    })
 							 });
 
