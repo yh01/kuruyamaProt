@@ -4,7 +4,6 @@
 jQuery(function($) {
 	var url = location.protocol;
 	url += "/kuruyamaProt/D3GraphList";
-	var dataSet= [];
 	getitemStockGraph();
 
 	function getitemStockGraph() {
@@ -14,6 +13,7 @@ jQuery(function($) {
 		datatype : 'json'
 	})
 		.done(function(data) {
+					var dataSet= [];
 					for(i=0;i<data.length;i++){
 						dataSet[i] = {
 							name:data[i].itemName, val:data[i].itemStock
@@ -44,18 +44,18 @@ jQuery(function($) {
 					            .append('svg')
 						        .attr({
 						    	       height: svgH + margin.top + margin.bottom,
-						               width:  size + svgW /2
+						               width:  size + svgW / 2
 		                     });
 
-		            //棒グラフの生成
+		            //棒グラフの設定
 					var barchart = svg.selectAll("rect")
 					         .data(dataSet)
 					         .enter()
 					         .append("rect")
 					         .attr({
-									x: 15 * nameMax,
+									x: 50 + 20 * nameMax,
 									y: function(d,i){
-								        return i * 35;
+								        return i * 35 + 10;
 								    },
 									width:0,
 									height :30,
@@ -63,8 +63,10 @@ jQuery(function($) {
 										var res;
 								        if(d.val <= 10){
 								        	res = "red";
-								        }else if(d.val >= 10){
-								        	res = color(d.val);
+								        }else if(d.val > 10 && d.val < 50){
+								        	res = "#2ca02c";
+								        }else if(d.val >= 50){
+								        	res = "#1f77b4";
 								        }
 								        return res;
 								    }
@@ -78,12 +80,14 @@ jQuery(function($) {
 							 .on("mouseout", function(d) {
 								d3.select(this).attr("fill", function(d, i){
 									var res;
-									if(d.val <= 10){
+							        if(d.val <= 10){
 							        	res = "red";
-							        }else if(d.val >= 10){
-							        	res = color(d.val);
+							        }else if(d.val > 10 && d.val < 50){
+							        	res = "#2ca02c";
+							        }else if(d.val >= 50){
+							        	res = "#1f77b4";
 							        }
-									return res;
+							        return res;
 							    })
 							 });
 
@@ -102,7 +106,7 @@ jQuery(function($) {
 					})
 
 
-					// 在庫数記載
+					// 在庫数
 					svg.selectAll("itemOfStock")
 							.data(dataSet)
 							.enter()
@@ -112,10 +116,10 @@ jQuery(function($) {
 							})
 							.attr({
 								x:function(d,i){
-									return  d.val * 2 - 20 + 15 * nameMax
+									return  50 + d.val * 2 - 20 + 20 * nameMax
 								},
 								y: function(d,i){
-							        return i * 35+20;
+							        return i * 35 + 20 + 10;
 							    },
 							    width:function(d,i){
 							    	return  d.val* 5 + 15
@@ -125,7 +129,7 @@ jQuery(function($) {
 							});
 
 
-					// 商品の名前の記載
+					// 商品名
 					var itemName = svg.selectAll("itemName")
 							.data(dataSet)
 							.enter()
@@ -134,9 +138,9 @@ jQuery(function($) {
 								return d.name
 							})
 							.attr({
-								x:nameMax,
+								x:50+nameMax,
 								y:  function(d,i){
-							        return i * 35 + 20;
+							        return i * 35 + 20 + 10;
 							    },
 								fill:"black",
 							})
