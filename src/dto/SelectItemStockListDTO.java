@@ -1,6 +1,6 @@
 package dto;
 
-public class D3SelectListDTO {
+public class SelectItemStockListDTO {
 	private String itemName;
 	private int itemStock;
 	public String getItemName() {

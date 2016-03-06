@@ -3,7 +3,7 @@
  */
 jQuery(function($) {
 	var url = location.protocol;
-	url += "/kuruyamaProt/D3GraphList";
+	url += "/kuruyamaProt/itemStockGraphList";
 	getitemStockGraph();
 
 	function getitemStockGraph() {

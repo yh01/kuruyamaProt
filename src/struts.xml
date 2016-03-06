@@ -3,6 +3,7 @@
 <struts>
 <constant name="struts.ui.theme" value="simple" />
 <package name="kuruyamaProt" namespace="/" extends="struts-default">
+
 	<result-types>
 		<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
 	</result-types>
@@ -34,8 +35,8 @@
 	</action>
 
 
-<!--D3の表示をするアクション2 -->
-	<action name="D3GraphList" class="action.D3SelectListAction" method="execute">
+<!--在庫数のグラフの表示をするアクション -->
+	<action name="itemStockGraphList" class="action.SelectItemStockListAction" method="execute">
 		<result name="success" type="json">
 			<param name="root">D3GraphList</param>
 		</result>

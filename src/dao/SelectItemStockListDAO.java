@@ -9,18 +9,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dto.D3SelectListDTO;
-import util.D3DBConnector;
+import dto.SelectItemStockListDTO;
+import util.MySQLConnector;
 
-public class D3SelectListDAO {
+public class SelectItemStockListDAO {
 
 
-	public List<D3SelectListDTO> D3GraphList = new ArrayList<D3SelectListDTO>();
-	D3SelectListDTO dto = new D3SelectListDTO();
+	public List<SelectItemStockListDTO> D3GraphList = new ArrayList<SelectItemStockListDTO>();
+	SelectItemStockListDTO dto = new SelectItemStockListDTO();
 
 	public boolean select(){
 		boolean result = true;
-		D3DBConnector dbConnection = new D3DBConnector();
+		MySQLConnector dbConnection = new MySQLConnector();
 		Connection con = dbConnection.getConnection("ramen");
 
 		try{
@@ -29,7 +29,7 @@ public class D3SelectListDAO {
 			ResultSet rSet = ps.executeQuery();
 
 			while(rSet.next()){
-				D3SelectListDTO dto = new D3SelectListDTO();
+				SelectItemStockListDTO dto = new SelectItemStockListDTO();
 				dto.setItemName(rSet.getString(1));
 				dto.setItemStock(rSet.getInt(2));
 				D3GraphList.add(dto);
@@ -47,19 +47,19 @@ public class D3SelectListDAO {
 		}
 		return result;
 	}
-	public List<D3SelectListDTO> getD3GraphList() {
+	public List<SelectItemStockListDTO> getD3GraphList() {
 		return D3GraphList;
 	}
 
-	public void setD3GraphList(List<D3SelectListDTO> d3GraphList) {
+	public void setD3GraphList(List<SelectItemStockListDTO> d3GraphList) {
 		D3GraphList = d3GraphList;
 	}
 
-	public D3SelectListDTO getDto() {
+	public SelectItemStockListDTO getDto() {
 		return dto;
 	}
 
-	public void setDto(D3SelectListDTO dto) {
+	public void setDto(SelectItemStockListDTO dto) {
 		this.dto = dto;
 	}
 }
