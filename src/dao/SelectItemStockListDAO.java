@@ -12,12 +12,30 @@ import java.util.List;
 import dto.SelectItemStockListDTO;
 import util.MySQLConnector;
 
+/**
+ * 商品編集画面の在庫数グラフを表示する為に必要な、商品名と在庫数をramenデータベースのramen_itemテーブルから取得するクラス
+ * @author Yuki Hoshino
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class SelectItemStockListDAO {
 
-
+	/**
+	 * 商品名と在庫数を格納するリスト
+	 */
 	public List<SelectItemStockListDTO> D3GraphList = new ArrayList<SelectItemStockListDTO>();
+
+
+	/**
+	 * 商品名と在庫数を取得、格納するクラスのインスタンス
+	 */
 	SelectItemStockListDTO dto = new SelectItemStockListDTO();
 
+	/**
+	 *	データベースに接続し商品名と在庫数をramenデータベースのramen_itemテーブルから取得するメソッド
+	 * @return result 取得できたらtrue、できなかったらfalseを返します。
+	 */
 	public boolean select(){
 		boolean result = true;
 		MySQLConnector dbConnection = new MySQLConnector();
@@ -47,18 +65,35 @@ public class SelectItemStockListDAO {
 		}
 		return result;
 	}
+
+	/**
+	 * 商品名と在庫数を取得するメソッド
+	 * @return D3GraphList 商品名と在庫数を格納するリスト
+	 */
 	public List<SelectItemStockListDTO> getD3GraphList() {
 		return D3GraphList;
 	}
 
+	/**
+	 * 商品名と在庫数を格納するメソッド
+	 * @param d3GraphList 商品名と在庫数を格納するリスト
+	 */
 	public void setD3GraphList(List<SelectItemStockListDTO> d3GraphList) {
 		D3GraphList = d3GraphList;
 	}
 
+	/**
+	 * 商品名と在庫数を取得、格納するクラスのインスタンスを取得するメソッド
+	 * @return dto 商品名と在庫数を取得、格納するクラスのインスタンス
+	 */
 	public SelectItemStockListDTO getDto() {
 		return dto;
 	}
 
+	/**
+	 * 商品名と在庫数を取得、格納するクラスのインスタンスを格納するメソッド
+	 * @param dto 商品名と在庫数を取得、格納するクラスのインスタンス
+	 */
 	public void setDto(SelectItemStockListDTO dto) {
 		this.dto = dto;
 	}
