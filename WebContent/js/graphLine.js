@@ -20,6 +20,9 @@ jQuery(function($) {
 						};
 					}
 					var dataMax = d3.max(dataSet,function(d){
+						return d.val * 3;
+					});
+					var dataMin = d3.min(dataSet,function(d){
 						return d.val*3;
 					});
 
@@ -36,16 +39,16 @@ jQuery(function($) {
 							right:0,
 							left:200
 					}
-					var color = d3.scale.category20();
 					var svgH = (35 * (data.length));
-					var svgW = dataMax;
+					var svgW = dataMax + (50 + 20 * nameMax);
 					var h = dataSet.length;
 					var svg = d3.select("#graphLine")
-					            .append('svg')
+					            .append("svg")
 						        .attr({
 						    	       height: svgH + margin.top + margin.bottom,
-						               width:  size + svgW / 2
-		                     });
+						               width: svgW - dataMax/4 + 50
+						        });
+
 
 		            //棒グラフの設定
 					var barchart = svg.selectAll("rect")
@@ -55,7 +58,7 @@ jQuery(function($) {
 					         .attr({
 									x: 50 + 20 * nameMax,
 									y: function(d,i){
-								        return i * 35 + 10;
+								        return i * 35 + 20;
 								    },
 									width:0,
 									height :30,
@@ -92,7 +95,7 @@ jQuery(function($) {
 							 });
 
 					//アニメーション
-					d3.select("body").on("mouseover", function(){
+					d3.select("body").on("click", function(){
 						barchart
 					    .transition()
 					    .delay(function(d, i){
@@ -101,7 +104,7 @@ jQuery(function($) {
 					    .attr("width", function(d){
 					        return (d.val * 2 + 15);
 					    })
-					    .duration(1000)
+					    .duration(3000)
 					    .ease("bounce")
 					})
 
@@ -119,7 +122,7 @@ jQuery(function($) {
 									return  50 + d.val * 2 - 20 + 20 * nameMax
 								},
 								y: function(d,i){
-							        return i * 35 + 20 + 10;
+							        return i * 35 + 20 + 20;
 							    },
 							    width:function(d,i){
 							    	return  d.val* 5 + 15
@@ -138,9 +141,9 @@ jQuery(function($) {
 								return d.name
 							})
 							.attr({
-								x:50+nameMax,
-								y:  function(d,i){
-							        return i * 35 + 20 + 10;
+								x: 50 + nameMax,
+								y: function(d,i){
+							        return i * 35 + 20 + 20;
 							    },
 								fill:"black",
 							})
