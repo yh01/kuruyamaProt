@@ -16,7 +16,9 @@ jQuery(function($) {
 					var dataSet= [];
 					for(i=0;i<data.length;i++){
 						dataSet[i] = {
-							name:data[i].itemName, val:data[i].itemStock
+							name:data[i].itemName,
+							val:data[i].itemStock,
+							exp:data[i].explanation
 						};
 					}
 					var dataMax = d3.max(dataSet,function(d){
@@ -75,10 +77,10 @@ jQuery(function($) {
 								    }
 					         })
 					         .on("click", function(d) {
-					        	 alert(d.name + "の在庫数： " + d.val);
+					        	 alert(d.name + "の在庫数： " + d.val + "\n" + d.exp);
 					         })
 					         .on("mouseover", function(d) {
-								 d3.select(this).attr("fill", "orange");
+								 d3.select(this).attr("fill", "orange").style("cursor","hand");
 							 })
 							 .on("mouseout", function(d) {
 								d3.select(this).attr("fill", function(d, i){
@@ -147,6 +149,14 @@ jQuery(function($) {
 							    },
 								fill:"black",
 							})
+							.style("font-size","18px")
+							.style("font-family", "serif")
+							.on("mouseover", function(d) {
+								 d3.select(this).style("cursor","hand");
+							})
+							.on("click", function(d) {
+					        	 alert(d.name + "の在庫数： " + d.val + "\n" + d.exp);
+					        })
 		});
 	};
 });

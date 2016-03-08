@@ -18,6 +18,8 @@ public class SelectItemStockListDTO {
 	 */
 	private int itemStock;
 
+	private String explanation;
+
 	/**
 	 * 商品名を取得するメソッド
 	 * @return itemName 商品名
@@ -48,5 +50,13 @@ public class SelectItemStockListDTO {
 	 */
 	public void setItemStock(int itemStock) {
 		this.itemStock = itemStock;
+	}
+
+	public String getExplanation() {
+		return explanation;
+	}
+
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
 	}
 }
