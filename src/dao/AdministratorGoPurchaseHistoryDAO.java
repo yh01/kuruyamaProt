@@ -37,7 +37,7 @@ public class AdministratorGoPurchaseHistoryDAO {
 			while(rSet.next()){
 				AdminPurchaseHistoryDTO dto = new AdminPurchaseHistoryDTO();
 				dto.setSalesId(rSet.getInt("sales_id"));
-				dto.setUserId(rSet.getInt("user_id"));
+				dto.setUserId(rSet.getInt("id"));
 				dto.setItemName(rSet.getString("item_name"));
 				dto.setNumberOfItem(rSet.getInt("number_of_items"));
 				dto.setDateTime(rSet.getString("purchase_date"));

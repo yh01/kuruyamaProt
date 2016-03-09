@@ -77,7 +77,7 @@ jQuery(function($) {
 								    }
 					         })
 					         .on("click", function(d) {
-					        	 alert(d.name + "の在庫数： " + d.val + "\n" + d.exp);
+					        	 alert(d.name + "の在庫数： " + d.val);
 					         })
 					         .on("mouseover", function(d) {
 								 d3.select(this).attr("fill", "orange").style("cursor","hand");
@@ -155,7 +155,7 @@ jQuery(function($) {
 								 d3.select(this).style("cursor","hand");
 							})
 							.on("click", function(d) {
-					        	 alert(d.name + "の在庫数： " + d.val + "\n" + d.exp);
+					        	 alert("備考： "+d.exp);
 					        })
 		});
 	};

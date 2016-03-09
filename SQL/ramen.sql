@@ -54,7 +54,7 @@ create table history(
 
 sales_id int primary key not null auto_increment,
 
-user_id int not null,
+id int not null,
 
 item_name varchar(100),
 

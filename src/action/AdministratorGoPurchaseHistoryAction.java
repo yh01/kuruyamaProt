@@ -48,9 +48,11 @@ public class AdministratorGoPurchaseHistoryAction extends ActionSupport implemen
 			res = "success";
 		}
 
+		/*
 		if(!session.containsKey("adminId")){
 			res = "loginError";
 		}
+		*/
 		return res;
 	}
 

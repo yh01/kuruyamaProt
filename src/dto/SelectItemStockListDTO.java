@@ -18,6 +18,9 @@ public class SelectItemStockListDTO {
 	 */
 	private int itemStock;
 
+	/**
+	 * 備考
+	 */
 	private String explanation;
 
 	/**
@@ -52,10 +55,18 @@ public class SelectItemStockListDTO {
 		this.itemStock = itemStock;
 	}
 
+	/**
+	 * 備考を格納するメソッド
+	 * @return explanation 備考
+	 */
 	public String getExplanation() {
 		return explanation;
 	}
 
+	/**
+	 * 備考を格納するメソッド
+	 * @param explanation 備考
+	 */
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
 	}
