@@ -18,7 +18,10 @@ jQuery(function($) {
 						dataSet[i] = {
 							name:data[i].itemName,
 							val:data[i].itemStock,
-							exp:data[i].explanation
+							exp:data[i].explanation,
+							price:data[i].price,
+							id:data[i].itemId,
+							category:data[i].category
 						};
 					}
 					var dataMax = d3.max(dataSet,function(d){
@@ -131,6 +134,9 @@ jQuery(function($) {
 							    },
 								height :30,
 								fill:"white",
+							})
+							.on("mouseover", function(d) {
+								 d3.select(this).style("cursor","hand");
 							});
 
 
@@ -155,7 +161,7 @@ jQuery(function($) {
 								 d3.select(this).style("cursor","hand");
 							})
 							.on("click", function(d) {
-					        	 alert("備考： "+d.exp);
+					        	 alert("商品ID： " + d.id + "\n" + "価格： \\" + d.price + "\n" +"カテゴリー： " + d.category + "\n" + "備考： "+ d.exp);
 					        })
 		});
 	};

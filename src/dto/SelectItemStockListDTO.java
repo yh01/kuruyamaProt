@@ -24,6 +24,21 @@ public class SelectItemStockListDTO {
 	private String explanation;
 
 	/**
+	 * 価格
+	 */
+	private int price;
+
+	/**
+	 * 商品ID
+	 */
+	private int itemId;
+
+	/**
+	 * カテゴリー
+	 */
+	private String category;
+
+	/**
 	 * 商品名を取得するメソッド
 	 * @return itemName 商品名
 	 */
@@ -56,7 +71,7 @@ public class SelectItemStockListDTO {
 	}
 
 	/**
-	 * 備考を格納するメソッド
+	 * 備考を取得するメソッド
 	 * @return explanation 備考
 	 */
 	public String getExplanation() {
@@ -69,5 +84,53 @@ public class SelectItemStockListDTO {
 	 */
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
+	}
+
+	/**
+	 * 価格を取得するメソッド
+	 * @return price 価格
+	 */
+	public int getPrice() {
+		return price;
+	}
+
+	/**
+	 * 価格を格納するメソッド
+	 * @param price 価格
+	 */
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	/**
+	 * 商品IDを取得するメソッド
+	 * @return itemId 商品ID
+	 */
+	public int getItemId() {
+		return itemId;
+	}
+
+	/**
+	 * 商品IDを格納するメソッド
+	 * @param itemId 商品ID
+	 */
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+	/**
+	 * カテゴリーを取得するメソッド
+	 * @return category カテゴリー
+	 */
+	public String getCategory() {
+		return category;
+	}
+
+	/**
+	 * カテゴリーを格納するメソッド
+	 * @param category カテゴリー
+	 */
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

@@ -42,7 +42,7 @@ public class SelectItemStockListDAO {
 		Connection con = dbConnection.getConnection("ramen");
 
 		try{
-			String sql = "SELECT item_name,item_stock,explanation from ramen_items ORDER BY item_id";
+			String sql = "SELECT item_name,item_stock,explanation,price,item_id,category FROM ramen_items ORDER BY item_id";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rSet = ps.executeQuery();
 
@@ -51,6 +51,9 @@ public class SelectItemStockListDAO {
 				dto.setItemName(rSet.getString(1));
 				dto.setItemStock(rSet.getInt(2));
 				dto.setExplanation(rSet.getString(3));
+				dto.setPrice(rSet.getInt(4));
+				dto.setItemId(rSet.getInt(5));
+				dto.setCategory(rSet.getString(6));
 				D3GraphList.add(dto);
 			}
 		}catch(SQLException e){
