@@ -23,31 +23,14 @@ item_stock int not null,
 
 img_path varchar(100) not null
 );
-insert into ramen_items value
-(1,"しょうゆ","しょうゆラーメンです","ramen",500,135,"aaa"),
-(2,"しょうゆ","しょうゆラーメンです","ramen",500,20,"aaa"),
-(3,"しょうゆ","しょうゆラーメンです","ramen",500,30,"aaa"),
-(4,"しょうゆ","しょうゆラーメンです","ramen",500,130,"aaa"),
-(5,"しょうゆラーメン","しょうゆラーメンです","ramen",500,30,"aaa"),
-(6,"ラーメン","しょうゆラーメンです","ramen",500,30,"aaa"),
-(7,"ラーメン","しょうゆラーメンです","ramen",500,30,"aaa"),
-(8,"ラーメン","しょうゆラーメンです","ramen",500,30,"aaa"),
-(9,"ラーメン","しょうゆラーメンです","ramen",500,10,"aaa"),
-(10,"ラーメン","しょうゆラーメンです","ramen",500,111,"aaa"),
-(11,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(12,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(13,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(14,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(15,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(16,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(17,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(18,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(19,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(20,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(21,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(22,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(23,"ラーメン","しょうゆラーメンです","ramen",500,20,"aaa"),
-(24,"ラーメン","しょうゆラーメンです","ramen",500,300,"aaa");
+
+
+insert into ramen_items values(1,'しょうゆラーメン','醤油ベースのラーメン','ramen',500,10,'img/しょうゆラーメン.jpg');
+insert into ramen_items values(2,'塩ラーメン','塩ベースのラーメン','ramen',600,10,'img/とんこつラーメン.jpg');
+insert into ramen_items values(3,'とんこつラーメン','とんこつベースのラーメン','ramen',700,10,'img/塩ラーメン.jpg');
+insert into ramen_items values(4,'味噌ラーメン','味噌ベースのラーメン','ramen',400,20,'img/味噌ラーメン.jpg');
+
+
 
 drop table if exists history;
 create table history(
@@ -64,16 +47,15 @@ purchase_date datetime not null,
 
 postal_code varchar(8),
 
-addless varchar(100)
+address varchar(100)
 );
-insert into history value
-(1,1,"しょうゆラーメン",2,"2016-01-28 22:00:00","222-2222","カリフォルニア"),
-(2,1,"みそラーメン",2,"2016-01-28 22:00:00","222-2222","カリフォルニア"),
-(3,1,"みそラーメン",2,"2016-01-27 22:00:00","222-2222","カリフォルニア"),
-(4,2,"しおラーメン",2,"2016-01-27 22:00:00","222-2222","カリフォルニア"),
-(5,5,"しおラーメン",2,"2016-01-25 22:00:00","222-2222","カリフォルニア"),
-(6,2,"しょうゆラーメン",2,"2016-01-25 22:00:00","222-2222","カリフォルニア"),
-(7,1,"しょうゆラーメン",2,"2016-01-28 22:00:00","222-2222","カリフォルニア");
+insert into history values
+(1,1,"しょうゆラーメン",1,"2016-03-14 01:00:00","1111111","東京都文京区湯島1-1-1"),
+(2,1,"塩ラーメン",2,"2016-03-15 01:00:00","1111111","東京都文京区湯島1-1-1"),
+(3,3,"しょうゆラーメン",3,"2016-03-16 01:00:00","1111113","東京都文京区湯島1-1-3"),
+(4,3,"塩ラーメン",2,"2016-03-16 01:00:00","1111113","東京都文京区湯島1-1-3"),
+(5,6,"とんこつラーメン",1,"2016-03-17 01:00:00","1111116","東京都文京区湯島1-1-6"),
+(6,6,"味噌ラーメン",1,"2016-03-17 01:00:00","1111116","東京都文京区湯島1-1-6");
 
 
 drop table if exists cart;
@@ -81,7 +63,7 @@ create table cart(
 
 cart_id int primary key not null auto_increment,
 
-user_id int not null,
+id int not null,
 
 item_id int not null,
 
@@ -89,5 +71,24 @@ number_of_items int not null
 
 );
 
+drop table if exists temp;
+create table temp(
+temp_id int primary key auto_increment,
+user_name varchar(255),
+password varchar(255),
+email varchar(100) unique,
+cell_number varchar(15) unique,
+postal_code varchar(8),
+address varchar(100),
+card_number varchar(50),
+card_holder varchar(255),
+expiration_date varchar(20),
+security_code varchar(4),
+oauth_id varchar(50),
+oauth_name varchar(50),
+registration_date datetime
+);
 
-
+insert into temp value
+	(1,'テスト','test','test@gmail.com','09012345678','1234567','テスト県テスト市0-000-0','','','','','','',now()),
+	(2,'テスト2','test2','test2@gmail.com','09087654321','7654321','テスト県テスト市2-222-2','','','','','','',now());

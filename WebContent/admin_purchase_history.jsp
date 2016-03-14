@@ -58,7 +58,10 @@ $(function(){
 					</s:form>
 
 					<s:form action="SearchPurchaseHistoryWithDateAction">
-					<li style="float: right;"><s:textfield name="purchaseDate" placeholder="注文日を入力してください。例:半角英数で20160224" size="41"/><button type="submit">検索</button></li>
+					<li style="float: right;">
+					<s:textfield name="purchaseDate" placeholder="注文日を入力してください。例:半角英数で20160224" size="50"/>
+					<button type="submit">検索</button>
+					</li>
 					</s:form>
 				</ul>
 					<table>
