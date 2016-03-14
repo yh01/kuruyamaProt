@@ -31,19 +31,19 @@ public class SearchPurchaseHistoryWithUserDAO {
 	public boolean selectUserId(int userId){
 		boolean res = true;
 		Connection con=MySQLConnector.getConnection("ramen");
-		String sql = "SELECT * FROM history WHERE user_id = '"+userId+"'";
+		String sql = "SELECT * FROM history WHERE id = '"+userId+"'";
 		try{
 			PreparedStatement ps=con.prepareStatement(sql);
 			ResultSet rSet = ps.executeQuery();
 			while(rSet.next()){
 				AdminPurchaseHistoryDTO dto = new AdminPurchaseHistoryDTO();
 				dto.setSalesId(rSet.getInt("sales_id"));
-				dto.setUserId(rSet.getInt("user_id"));
+				dto.setUserId(rSet.getInt("id"));
 				dto.setItemName(rSet.getString("item_name"));
 				dto.setNumberOfItem(rSet.getInt("number_of_items"));
 				dto.setDateTime(rSet.getString("purchase_date"));
 				dto.setPostalCode(rSet.getString("postal_code"));
-				dto.setAddress(rSet.getString("addless"));
+				dto.setAddress(rSet.getString("address"));
 				historyList.add(dto);
 				res = true;
 			}

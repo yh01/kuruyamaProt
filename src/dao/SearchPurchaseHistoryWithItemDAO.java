@@ -38,12 +38,12 @@ public class SearchPurchaseHistoryWithItemDAO {
 			while(rSet.next()){
 				AdminPurchaseHistoryDTO dto = new AdminPurchaseHistoryDTO();
 				dto.setSalesId(rSet.getInt("sales_id"));
-				dto.setUserId(rSet.getInt("user_id"));
+				dto.setUserId(rSet.getInt("id"));
 				dto.setItemName(rSet.getString("item_name"));
 				dto.setNumberOfItem(rSet.getInt("number_of_items"));
 				dto.setDateTime(rSet.getString("purchase_date"));
 				dto.setPostalCode(rSet.getString("postal_code"));
-				dto.setAddress(rSet.getString("addless"));
+				dto.setAddress(rSet.getString("address"));
 				historyList.add(dto);
 				res = true;
 			}

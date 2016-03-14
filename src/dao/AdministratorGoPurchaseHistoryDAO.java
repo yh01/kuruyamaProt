@@ -42,7 +42,7 @@ public class AdministratorGoPurchaseHistoryDAO {
 				dto.setNumberOfItem(rSet.getInt("number_of_items"));
 				dto.setDateTime(rSet.getString("purchase_date"));
 				dto.setPostalCode(rSet.getString("postal_code"));
-				dto.setAddress(rSet.getString("addless"));
+				dto.setAddress(rSet.getString("address"));
 				historyList.add(dto);
 				res = true;
 			}

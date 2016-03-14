@@ -46,9 +46,11 @@ public class SearchPurchaseHistoryWithItemAction extends ActionSupport implement
 			setHistoryList(dao.getHistoryList());
 			res = "success";
 		}
+		/*
 		if(!session.containsKey("adminId")){
 			res = "loginError";
 		}
+		*/
 		return res;
 	}
 
