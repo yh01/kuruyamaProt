@@ -19,6 +19,31 @@ import util.MySQLConnector;
 public class SearchPurchaseHistoryWithItemDAO {
 
 	/**
+	 * 結果を格納
+	 */
+	private boolean res;
+
+	/**
+	 * データベース接続
+	 */
+	private Connection con;
+
+	/**
+	 * SQL文
+	 */
+	private String sql;
+
+	/**
+	 * SQL文を送るための準備
+	 */
+	private PreparedStatement ps;
+
+	/**
+	 * 結果を格納
+	 */
+	private ResultSet rSet;
+
+	/**
 	 * 購入履歴一覧を格納するリスト
 	 */
 	private ArrayList<AdminPurchaseHistoryDTO> historyList = new ArrayList<AdminPurchaseHistoryDTO>();
@@ -29,12 +54,13 @@ public class SearchPurchaseHistoryWithItemDAO {
 	 * @return res 取得できたらtrue、できなかったらfalseを返します。
 	 */
 	public boolean selectItemName(String itemName){
-		boolean res = true;
-		Connection con=MySQLConnector.getConnection("ramen");
-		String sql = "SELECT * FROM history WHERE item_name = '"+itemName+"'";
+		res = true;
 		try{
-			PreparedStatement ps=con.prepareStatement(sql);
-			ResultSet rSet = ps.executeQuery();
+			con = MySQLConnector.getConnection("ramen");
+			sql = "SELECT * FROM history WHERE item_name = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, itemName);
+			rSet = ps.executeQuery();
 			while(rSet.next()){
 				AdminPurchaseHistoryDTO dto = new AdminPurchaseHistoryDTO();
 				dto.setSalesId(rSet.getInt("sales_id"));
