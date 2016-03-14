@@ -8,9 +8,7 @@
 		<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
 	</result-types>
 
-
-
-	<action name="AdministratorGoPurchaseHistoryAction" class="action.AdministratorGoPurchaseHistoryAction" method="execute">
+	<action name="AdminGoPurchaseHistoryAction" class="action.AdministratorGoPurchaseHistoryAction" method="execute">
 			<result name="success">admin_purchase_history.jsp</result>
 			<result name="error">/admin_purchase_history.jsp</result>
 			<result name="loginError">/admin_login.jsp</result>
@@ -34,8 +32,7 @@
 			<result name="loginError">/admin_login.jsp</result>
 	</action>
 
-
-<!--在庫数のグラフの表示をするアクション -->
+	<!--在庫数のグラフの表示をするアクション -->
 	<action name="itemStockGraphList" class="action.SelectItemStockListAction" method="execute">
 		<result name="success" type="json">
 			<param name="root">D3GraphList</param>
@@ -44,5 +41,37 @@
 			<param name="root">false</param>
 		</result>
 	</action>
+
+	<!-- 管理ログイン -->
+    <action name="AdminLoginAction" class="action.AdminLoginAction" method="execute">
+        <result name="success" type="chain">AdminGoEditItemProductAction</result>
+        <result name= "error">admin_login.jsp</result>
+    </action>
+
+    <!--商品管理画面表示  -->
+     <action name="AdminGoEditItemProductAction" class="action.AdminGoEditProductAction" method="execute">
+        <result name= "success">/admin_item.jsp</result>
+        <result name= "error">admin_login.jsp</result>
+     </action>
+    <!-- 管理者商品在庫消去-->
+        <action name="AdminDeleteItemAction" class="action.AdminDeleteItemAction" method="execute">
+            <result name="success" type="chain">AdminGoEditItemProductAction</result>
+            <result name="error" type="chain">AdminGoEditItemProductAction</result>
+        </action>
+     <!-- 管理者商品情報追加 -->
+    <action name="AdminAddItemAction" class="action.AdminAddItemAction" method="execute">
+            <result name="success" type="chain">AdminGoEditItemProductAction</result>
+            <result name="error" type="chain">AdminGoEditItemProductAction</result>
+        </action>
+   <!--管理者商品在庫更新 -->
+    <action name="AdminUpdateStockAction" class="action.AdminUpdateStockAction" method="execute">
+            <result name="success" type="chain">AdminGoEditItemProductAction</result>
+            <result name="error" type="chain">AdminGoEditItemProductAction</result>
+        </action>
+   <!--管理者商品検索 -->
+		 <action name="AdminSearchItem" class="action.AdminSearchItemAction" method="execute">
+            <result name="success">admin_item.jsp</result>
+            <result name="error" type="chain">AdminGoEditItemProductAction</result>
+        </action>
 </package>
 </struts>

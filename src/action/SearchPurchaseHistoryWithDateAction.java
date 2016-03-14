@@ -20,9 +20,24 @@ import dto.AdminPurchaseHistoryDTO;
 public class SearchPurchaseHistoryWithDateAction extends ActionSupport implements SessionAware{
 
 	/**
-	 * 検索された注文日
+	 * 検索された年
 	 */
-	private String purchaseDate = null;
+	private String year = null;
+
+	/**
+	 * 検索された月
+	 */
+	private String month = null;
+
+	/**
+	 * 検索された日
+	 */
+	private String day = null;
+
+	/**
+	 * 検索された注文日を格納する変数
+	 */
+	private String purchaseDate;
 
 	/**
 	 * 購入履歴一覧を格納するリスト
@@ -41,6 +56,7 @@ public class SearchPurchaseHistoryWithDateAction extends ActionSupport implement
 	public String execute(){
 		String res = ERROR;
 		SearchPurchaseHistoryWithDateDAO dao = new SearchPurchaseHistoryWithDateDAO();
+		purchaseDate = year + month + day;
 
 		if(dao.selectSearchedDate(purchaseDate)){
 			historyList = dao.getHistoryList();
@@ -53,22 +69,6 @@ public class SearchPurchaseHistoryWithDateAction extends ActionSupport implement
 		*/
 
 		return res;
-	}
-
-	/**
-	 * 検索された注文日を取得するメソッド
-	 * @return purchaseDate 検索された注文日
-	 */
-	public String getPurchaseDate() {
-		return purchaseDate;
-	}
-
-	/**
-	 * 検索された注文日を格納するメソッド
-	 * @param purchaseDate 検索された注文日
-	 */
-	public void setPurchaseDate(String purchaseDate) {
-		this.purchaseDate = purchaseDate;
 	}
 
 	/**
@@ -101,5 +101,53 @@ public class SearchPurchaseHistoryWithDateAction extends ActionSupport implement
 	 */
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	/**
+	 * 検索された年を取得するメソッド
+	 * @return year 検索された年
+	 */
+	public String getYear() {
+		return year;
+	}
+
+	/**
+	 * 検索された年を格納するメソッド
+	 * @param year 検索された年
+	 */
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	/**
+	 * 検索された月を取得するメソッド
+	 * @return month 検索された月
+	 */
+	public String getMonth() {
+		return month;
+	}
+
+	/**
+	 * 検索された月を格納するメソッド
+	 * @param month 検索された月
+	 */
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	/**
+	 * 検索された日を取得するメソッド
+	 * @return day 検索された日
+	 */
+	public String getDay() {
+		return day;
+	}
+
+	/**
+	 * 検索された日を取得するメソッド
+	 * @param day 検索された日
+	 */
+	public void setDay(String day) {
+		this.day = day;
 	}
 }
