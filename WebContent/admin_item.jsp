@@ -31,7 +31,7 @@ $(function(){
 </script>
 <style>
     svg {
-    	background-color:#fff;
+    	background-image:url("img/bg.jpg");
     }
     .axis text {
         font-family: sans-serif;

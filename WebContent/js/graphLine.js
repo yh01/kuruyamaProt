@@ -133,7 +133,7 @@ jQuery(function($) {
 							    	return  d.val* 5 + 15
 							    },
 								height :30,
-								fill:"white",
+								fill:"black",
 							})
 							.on("mouseover", function(d) {
 								 d3.select(this).style("cursor","hand");
@@ -153,7 +153,7 @@ jQuery(function($) {
 								y: function(d,i){
 							        return i * 35 + 20 + 20;
 							    },
-								fill:"black",
+								fill:"white",
 							})
 							.style("font-size","18px")
 							.style("font-family", "serif")
