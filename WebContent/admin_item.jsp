@@ -191,13 +191,13 @@ $(function(){
 			<tbody id="CList">
 				<s:iterator value="list">
 					<tr>
-						<td><s:property value="item_id" /></td>
-						<td><s:property value="item_name"/></td>
+						<td><s:property value="itemId" /></td>
+						<td><s:property value="itemName"/></td>
 						<td><s:property value="explanation"/></td>
 						<td><s:property value="category"/></td>
 						<td><s:property value="price"/></td>
-						<td><s:property value="item_stock"/></td>
-						<td><s:property value="img_path"/></td>
+						<td><s:property value="itemStock"/></td>
+						<td><s:property value="imgPath"/></td>
 					</tr>
 				</s:iterator>
 			</tbody>
