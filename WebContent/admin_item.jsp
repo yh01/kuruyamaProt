@@ -10,10 +10,14 @@
 <link rel="stylesheet" href="././css/style.css">
 <link rel="stylesheet" href="././css/admin_item.css">
 <link rel="stylesheet" href="././css/bootstrap.min.css">
+<link rel="stylesheet" href="././css/sweetalert.css">
 
 <script type="text/javascript" src="./js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="./js/jPages.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/sweetalert-dev.js"></script>
+<script type="text/javascript" src="js/sweetalert.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
 <script type="text/javascript" src="js/graphLine.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>

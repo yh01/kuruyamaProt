@@ -80,7 +80,7 @@ jQuery(function($) {
 								    }
 					         })
 					         .on("click", function(d) {
-					        	 alert(d.name + "の在庫数： " + d.val);
+					        	 swal(d.name + "の在庫数： " + d.val);
 					         })
 					         .on("mouseover", function(d) {
 								 d3.select(this).attr("fill", "orange").style("cursor","hand");
@@ -161,7 +161,7 @@ jQuery(function($) {
 								 d3.select(this).style("cursor","hand");
 							})
 							.on("click", function(d) {
-					        	 alert("商品ID： " + d.id + "\n" + "価格： \\" + d.price + "\n" +"カテゴリー： " + d.category + "\n" + "備考： "+ d.exp);
+								swal("商品ID： " + d.id + "\n" + "価格： \\" + d.price + "\n" +"カテゴリー： " + d.category + "\n" + "備考： "+ d.exp);
 					        })
 		});
 	};
