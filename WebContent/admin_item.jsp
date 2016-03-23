@@ -48,6 +48,7 @@ $(function(){
     }
     div#graphLine{
     	overflow-x: scroll;
+    	background-image:url("img/bg.jpg");
     }
 </style>
 </head>

@@ -25,7 +25,7 @@ img_path varchar(100) not null
 );
 
 
-insert into ramen_items values(1,'しょうゆラーメン','醤油ベースのラーメン','ramen',500,10,'img/しょうゆラーメン.jpg');
+insert into ramen_items values(1,'しょうゆラーメン','醤油ベースのラーメン','ramen',500,1000,'img/しょうゆラーメン.jpg');
 insert into ramen_items values(2,'塩ラーメン','塩ベースのラーメン','ramen',600,10,'img/とんこつラーメン.jpg');
 insert into ramen_items values(3,'とんこつラーメン','とんこつベースのラーメン','ramen',700,10,'img/塩ラーメン.jpg');
 insert into ramen_items values(4,'味噌ラーメン','味噌ベースのラーメン','ramen',400,20,'img/味噌ラーメン.jpg');

@@ -161,7 +161,7 @@ jQuery(function($) {
 								 d3.select(this).style("cursor","hand");
 							})
 							.on("click", function(d) {
-								swal("商品ID： " + d.id + "\n" + "価格： \\" + d.price + "\n" +"カテゴリー： " + d.category + "\n" + "備考： "+ d.exp);
+								swal("商品ID： " + d.id + "\n" + "価格： ￥" + d.price + "\n" +"カテゴリー： " + d.category + "\n" + "備考： "+ d.exp);
 					        })
 		});
 	};
