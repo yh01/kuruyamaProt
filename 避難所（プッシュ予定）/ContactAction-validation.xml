@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+
+	<field name = "formAddress">
+		<field-validator type = "email">
+			<message key="contactaction_validation.email"/>
+		</field-validator>
+	</field>
+
+	<field name = "formContents">
+		<field-validator type = "stringlength">
+			<param name="minLength">1</param>
+			<param name="maxLength">500</param>
+			<message key="contactaction_validation.content"/>
+		</field-validator>
+	</field>
+
+</validators>

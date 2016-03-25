@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+     "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.custom.i18n.resources"
+    value="com.internousdevwork.kuruyama.property.admin_purchase_history,
+           com.internousdevwork.kuruyama.property.admin_customer,
+           com.internousdevwork.kuruyama.property.admin_login,
+           com.internousdevwork.kuruyama.property.login,
+           com.internousdevwork.kuruyama.property.admin_item,
+           com.internousdevwork.kuruyama.property.mypage,
+           com.internousdevwork.kuruyama.property.create_user_completion,
+           com.internousdevwork.kuruyama.property.admin_inquiry,
+           com.internousdevwork.kuruyama.property.company,
+           com.internousdevwork.kuruyama.property.withdrowal_conform,
+           com.internousdevwork.kuruyama.property.payment_information_edit,
+           com.internousdevwork.kuruyama.property.order_check,
+           com.internousdevwork.kuruyama.property.purchase_completion,
+           com.internousdevwork.kuruyama.property.edit_completion,
+           com.internousdevwork.kuruyama.property.edit_user,
+           com.internousdevwork.kuruyama.property.main,
+           com.internousdevwork.kuruyama.property.create_user,
+           com.internousdevwork.kuruyama.property.edit_confirmation,
+           com.internousdevwork.kuruyama.property.help,
+           com.internousdevwork.kuruyama.property.cart,
+           com.internousdevwork.kuruyama.property.change_registration_action,
+           com.internousdevwork.kuruyama.property.edit_user_check
+           com.internousdevwork.kuruyama.property.create_user_check,
+           com.internousdevwork.kuruyama.property.footer,
+           com.internousdevwork.kuruyama.property.header,
+           com.internousdevwork.kuruyama.property.create_useraction_validation,
+           com.internousdevwork.kuruyama.property.change_credit_infromation_action_validation,
+           com.internousdevwork.kuruyama.property.contactaction_validation
+           "/>
+
+     <package name="/kuruyama" namespace="/" extends="struts-default">
+	<result-types>
+		<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+	</result-types>
+
+
+    <!-- ヘルプに遷移 -->
+    <action name="GoHelplAction" class="com.internousdevwork.kuruyama.action.GoHelplAction" method="execute">
+        <result name="success">help.jsp</result>
+        <result name= "error">help.jsp</result>
+    </action>
+
+    <!-- お問い合わせに遷移 -->
+    <action name="GoAdminInquiryAction" class="com.internousdevwork.kuruyama.action.GoAdminInquiryAction" method="execute">
+        <result name="success">/admin_inquiry.jsp</result>
+        <result name="error">/admin_login.jsp</result>
+    </action>
+
+    <!-- お問い合わせ情報を入力 -->
+    <action name="ContactAction" class="com.internousdevwork.kuruyama.action.ContactAction" method="execute">
+        <result name="success">/help.jsp</result>
+        <result name="error">/help.jsp</result>
+        <result name="input">help.jsp</result>
+    </action>
+
+    <!-- お問い合わせ情報の検索-->
+    <action name="AdminSelectInquiryAction" class="com.internousdevwork.kuruyama.action.AdminSelectInquiryAction" method="execute">
+        <result name="success">admin_inquiry.jsp</result>
+        <result name="error">admin_inquiry.jsp</result>
+    </action>
+
+
+    <!-- メイン画面の出力 -->
+    <action name="GoMainAction" class="com.internousdevwork.kuruyama.action.GoMainAction" method="execute">
+        <result name="success">main.jsp</result>
+        <result name="error">main.jsp</result>
+    </action>
+    <!-- メイン画面からカートに商品を入れる -->
+    <action name="AddItemsToCartAction" class="com.internousdevwork.kuruyama.action.AddItemsToCartAction" method="execute">
+        <result name="success">index.jsp</result>
+        <result name="error">index.jsp</result>
+    </action>
+    <action name="ChangeItemsCategoryAction" class="com.internousdevwork.kuruyama.action.ChangeItemsCategoryAction" method="execute">
+        <result name="success" type="chain">GoMainAction</result>
+        <result name="error" type="chain">GoMainAction</result>
+    </action>
+        <!-- カード変更画面へ遷移-->
+    <action name="GoEditPaymentInformationAction" class="com.internousdevwork.kuruyama.action.GoEditPaymentInformationAction" method="execute">
+            <result name="success" >/payment_information_edit.jsp</result>
+            <result name="error">/mypage.jsp</result>
+    </action>
+
+    <!-- カード変更確認画面へ遷移 -->
+    <action name="EditPaymentInformationAction" class="com.internousdevwork.kuruyama.action.EditPaymentInformationAction" method="execute">
+            <result name="success" >edit_payment_information_check.jsp</result>
+            <result name="error" >/payment_information_edit.jsp</result>
+            <result name="input" >payment_information_edit.jsp</result>
+    </action>
+    <!-- カード変更完了画面へ遷移 -->
+    <action name="EditPaymentInformationCompletionAction" class="com.internousdevwork.kuruyama.action.EditPaymentInformationCompletionAction" method="execute">
+            <result name="success" >edit_completion.jsp</result>
+            <result name="error" >payment_information_edit.jsp</result>
+
+    </action>
+    <!-- カード変更画面へ戻る -->
+    <action name="ForwardEditPaymentInformationAction" class="com.internousdevwork.kuruyama.action.ForwardEditPaymentInformationAction" method="execute">
+            <result name="success" >/payment_information_edit.jsp</result>
+            <result name="error" >/edit_payment_information_check.jsp</result>
+    </action>
+    <!--unique属性の重複チェックを行い登録確認へ遷移-->
+    <action name="CreateUserAction" class="com.internousdevwork.kuruyama.action.CreateUserAction" method="execute">
+               <result name="success">create_user_check.jsp</result>
+               <result name="error">create_user.jsp</result>
+       </action>
+
+<!-- ユーザー編集に遷移 -->
+    <action name="GoAdminUserAction" class="com.internousdevwork.kuruyama.action.GoAdminUserAction" method="execute">
+        <result name="success">admin_user.jsp</result>
+        <result name="error">admin_login.jsp</result>
+    </action>
+
+<!-- ユーザー名で検索しユーザー編集に遷移 -->
+    <action name="AdminSelectUsersAction" class="com.internousdevwork.kuruyama.action.AdminSelectUsersAction" method="execute">
+        <result name="success">admin_user.jsp</result>
+        <result name="error">admin_login.jsp</result>
+    </action>
+
+<!-- ユーザーIDで削除を行いユーザー編集に遷移 -->
+    <action name="AdminDeleteUserAction" class="com.internousdevwork.kuruyama.action.AdminDeleteUserAction" method="execute">
+        <result name="success" type="chain">GoAdminUserAction</result>
+        <result name="error">admin_login.jsp</result>
+        </action>
+
+    <!-- 購入履歴に遷移  -->
+    <action name="GoAdminPurchaseHistoryAction" class="com.internousdevwork.kuruyama.action.GoAdminPurchaseHistoryAction" method="execute">
+        <result name="success">admin_purchase_history.jsp</result>
+        <result name="error">/admin_login.jsp</result>
+    </action>
+
+
+    <!-- ログアウトからメインに遷移 -->
+    <action name="LogoutAction" class="com.internousdevwork.kuruyama.action.LogoutAction" method="execute">
+       <result name="success" type="chain">GoMainAction</result>
+        <result name="error" type="chain">GoMainAction</result>
+    </action>
+
+    <!-- 利用規約に遷移 -->
+    <action name="GoTermsOfServiceAciton" class="com.internousdevwork.kuruyama.action.GoTermsOfServiceAciton" method="execute">
+        <result name="success">terms_of_service.jsp</result>
+        <result name= "error">terms_of_service.jsp</result>
+    </action>
+
+    <!-- 会社概要に遷移 -->
+    <action name="GoCompanyAction" class="com.internousdevwork.kuruyama.action.GoCompanyAction" method="execute">
+        <result name="success">company.jsp</result>
+        <result name= "error">company.jsp</result>
+    </action>
+
+    <!-- ログイン画面に遷移 -->
+    <action name="GoLoginAction" class="com.internousdevwork.kuruyama.action.GoLoginAction" method="execute">
+        <result name="success">login.jsp</result>
+        <result name= "error">login.jsp</result>
+    </action>
+
+    <!--ログインからメインに遷移 -->
+		<action name="LoginAction" class="com.internousdevwork.kuruyama.action.LoginAction"
+			method="execute">
+			<result name="success" type="chain">GoMainAction</result>
+        <result name="error" type="chain">GoMainAction</result>
+		</action>
+
+            <!-- 管理ログイン -->
+    <action name="AdminLoginAction" class="com.internousdevwork.kuruyama.action.AdminLoginAction" method="execute">
+        <result name="success" type="chain">GoAdminItemAction</result>
+        <result name= "error">admin_login.jsp</result>
+    </action>
+
+    <!-- 管理ログアウト -->
+    <action name="AdminLogoutAction" class="com.internousdevwork.kuruyama.action.AdminLogoutAction" method="execute">
+        <result name="success">admin_login.jsp</result>
+        <result name= "error">admin_login.jsp</result>
+    </action>
+    <!--商品管理画面表示  -->
+     <action name="GoAdminItemAction" class="com.internousdevwork.kuruyama.action.GoAdminItemAction" method="execute">
+        <result name= "success">/admin_item.jsp</result>
+        <result name= "error">/admin_login.jsp</result>
+     </action>
+    <!-- 管理者商品在庫消去-->
+        <action name="AdminDeleteItemsAction" class="com.internousdevwork.kuruyama.action.AdminDeleteItemsAction" method="execute">
+            <result name="success" type="chain">GoAdminItemAction</result>
+            <result name= "error">/admin_login.jsp</result>
+        </action>
+     <!-- 管理者商品情報追加 -->
+    <action name="AdminAddItemsAction" class="com.internousdevwork.kuruyama.action.AdminAddItemsAction" method="execute">
+            <result name="success" type="chain">GoAdminItemAction</result>
+            <result name= "error">/admin_login.jsp</result>
+        </action>
+   <!--管理者商品在庫更新 -->
+    <action name="AdminUpdateItemStockAction" class="com.internousdevwork.kuruyama.action.AdminUpdateItemStockAction" method="execute">
+            <result name="success" type="chain">GoAdminItemAction</result>
+            <result name= "error">/admin_login.jsp</result>
+        </action>
+   <!--管理者商品検索 -->
+         <action name="AdminSelectItemsAction" class="com.internousdevwork.kuruyama.action.AdminSelectItemsAction" method="execute">
+            <result name="success">admin_item.jsp</result>
+            <result name= "error">/admin_login.jsp</result>
+        </action>
+        <!--在庫数のグラフの表示をするアクション -->
+        <action name="itemStockGraphList" class="com.internousdevwork.kuruyama.action.AdminSelectItemStockAction" method="execute">
+            <result name="success" type="json">
+                <param name="root">d3GraphList</param>
+            </result>
+            <result name="error" type="json">
+                <param name="root">false</param>
+            </result>
+        </action>
+
+
+    <!-- 新規登録画面に遷移するアクション-->
+    <action name="GoCreateUserAction" class="com.internousdevwork.kuruyama.action.GoCreateUserAction" method="execute">
+        <result name="success">create_user.jsp</result>
+        <result name= "error">main.jsp</result>
+    </action>
+
+       <!-- 新規登録確認から新規登録へ遷移 -->
+    <action name="ForwardCreateUserAction"
+            class="com.internousdevwork.kuruyama.action.ForwardCreateUserAction" method="execute">
+        <result name="success">create_user.jsp</result>
+        <result name="error" >create_user.jsp</result>
+    </action>
+             <!-- ユーザー情報編集へ遷移-->
+    <action name="GoEditUserInformationAction"
+            class="com.internousdevwork.kuruyama.action.GoEditUserInformationAction" method="execute">
+        <result name="success">edit_user_information.jsp</result>
+        <result name="error" >main.jsp</result>
+    </action>
+
+            <!-- ユーザー情報編集からユーザー情報編集確認へ遷移 -->
+    <action name="EditUserInformationAction"
+            class="com.internousdevwork.kuruyama.action.EditUserInformationAction" method="execute">
+        <result name="success">edit_user_information_check.jsp</result>
+        <result name="error" >edit_user_information.jsp</result>
+        <result name="input" >edit_user_information.jsp</result>
+    </action>
+
+       <!-- ユーザー情報編集確認からユーザー情報編集へ遷移 -->
+    <action name="ForwardEditUserInformationAction"
+            class="com.internousdevwork.kuruyama.action.ForwardEditUserInformationAction" method="execute">
+        <result name="success">edit_user_information.jsp</result>
+        <result name="input" >edit_user_information_check.jsp</result>
+    </action>
+
+        <!-- ユーザー情報を更新するアクション-->
+    <action name="EditUserInformationCompletionAction" class="com.internousdevwork.kuruyama.action.EditUserInformationCompletionAction" method="execute">
+        <result name="success">edit_completion.jsp</result>
+        <result name= "error">edit_user_information_check.jsp</result>
+	</action>
+<!-- カートに遷移 -->
+    <action name="GoCartAction" class="com.internousdevwork.kuruyama.action.GoCartAction" method="execute">
+        <result name ="success">cart.jsp</result>
+        <result name ="error" type="chain">GoEditPaymentInformationAction</result>
+    </action>
+
+<!-- カート内の商品個数を更新する -->
+    <action name="UpdateCartInformationAction" class="com.internousdevwork.kuruyama.action.UpdateCartInformationAction" method="execute">
+        <result name ="success" type="chain">GoCartAction</result>
+        <result name ="error">login.jsp</result>
+    </action>
+
+<!-- 購入確認へ遷移 -->
+    <action name="GoPurchaseCheckAction" class="com.internousdevwork.kuruyama.action.GoPurchaseCheckAction" method="execute">
+        <result name ="success">purchase_check.jsp</result>
+        <result name ="error" type="chain">GoCartAction</result>
+        <result name ="input" type="chain">GoCartAction</result>
+    </action>
+
+<!-- 購入完了へ遷移 -->
+    <action name="GoPurchaseCompletionAction" class="com.internousdevwork.kuruyama.action.GoPurchaseCompletionAction" method="execute">
+        <result name ="success">purchase_completion.jsp</result>
+        <result name ="error" type="chain">FowardCartAction</result>
+    </action>
+
+<!-- 購入確認からカートへ遷移-->
+    <action name="ForwardCartAction" class="com.internousdevwork.kuruyama.action.ForwardCartAction" method="execute">
+        <result name ="success" type="chain">GoCartAction</result>
+        <result name ="error">login.jsp</result>
+    </action>
+
+<!-- 退会画面へ遷移-->
+    <action name="GoWithdrawalCheckAction"
+            class="com.internousdevwork.kuruyama.action.GoWithdrawalCheckAction" method="execute">
+        <result name="success">withdrawal_check.jsp</result>
+        <result name="error">/main.jsp</result>
+    </action>
+
+<!-- 退会画面からログイン画面へ遷移-->
+    <action name="WithdrawalAction"
+            class="com.internousdevwork.kuruyama.action.WithdrawalAction" method="execute">
+        <result name="success" type="chain">LogoutAction</result>
+        <result name="error">/mypage.jsp</result>
+    </action>
+
+    <!-- Facebook認証を行うアクション-->
+	<action name="GoFacebookAction"
+		class="com.internousdevwork.kuruyama.action.GoFacebookAction"
+		method="execute">
+		<result name="success">login.jsp</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Facebook認証のコールバックアクション -->
+	<action name="login-facebook-action"
+		class="com.internousdevwork.kuruyama.action.LoginFacebookAction"
+		method="execute">
+		<result name="success" type="chain">GoMainAction</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Google認証を行うアクション-->
+	<action name="GoGoogleAction"
+		class="com.internousdevwork.kuruyama.action.GoGoogleAction" method="execute">
+		<result name= "success">login.jsp</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Google認証のコールバックアクション-->
+	<action name="login-google-action"
+		class="com.internousdevwork.kuruyama.action.LoginGoogleAction"
+		method="execute">
+		<result name="success" type="chain">GoMainAction</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Twitter認証を行うアクション-->
+	<action name="GoTwitterAction"
+		class="com.internousdevwork.kuruyama.action.GoTwitterAction" method="execute">
+		<result name="success">login.jsp</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- Twitter認証のコールバックアクション-->
+	<action name="login-twitter-action"
+		class="com.internousdevwork.kuruyama.action.LoginTwitterAction"
+		method="execute">
+		<result name="success" type="chain">GoMainAction</result>
+		<result name="error">login.jsp</result>
+	</action>
+
+	<!-- 新規登録確認画面に遷移するアクション-->
+		<action name="CreateUserAction"
+			class="com.internousdevwork.kuruyama.action.CreateUserAction"
+			method="execute">
+			<result name="success">/create_user_check.jsp</result>
+			<result name="error">/create_user.jsp</result>
+			<result name="input">/create_user.jsp</result>
+		</action>
+
+
+		<!-- 新規登録完了画面に遷移するアクション-->
+		<action name="CreateUserCompletionAction" class="com.internousdevwork.kuruyama.action.CreateUserCompletionAction"
+			method="execute">
+			<result name="success">/create_user_completion.jsp</result>
+			<result name="error">/create_user_check.jsp</result>
+		</action>
+
+
+		<!-- マイページに遷移するアクション-->
+		<action name="GoMypageAction" class="com.internousdevwork.kuruyama.action.GoMypageAction"
+			method="execute">
+			<result name="success" type="chain">MypageAction</result>
+			<result name="error">/main.jsp</result>
+		</action>
+
+
+		<!-- マイページにユーザー情報を表示させるアクション-->
+		<action name="MypageAction" class="com.internousdevwork.kuruyama.action.MypageAction"
+			method="execute">
+			<result name="success">/mypage.jsp</result>
+			<result name="error">/main.jsp</result>
+		</action>
+
+
+     </package>
+     </struts>
